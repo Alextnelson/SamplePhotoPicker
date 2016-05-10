@@ -32,6 +32,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func takePhoto(sender: AnyObject) {
+        cameraPicker.sourceType = .Camera
         presentViewController(cameraPicker, animated: true, completion: nil)
     }
     

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -54,13 +55,13 @@
                                 <exclude reference="rwA-q8-u3f"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="078-6d-nG4"/>
+                                <exclude reference="aLQ-la-5e6"/>
                                 <exclude reference="B1h-91-9Lg"/>
                                 <exclude reference="CDj-MA-vuG"/>
                                 <exclude reference="SZj-l1-dwc"/>
                                 <exclude reference="gEq-ic-K3l"/>
                                 <exclude reference="yVW-Df-XBZ"/>
-                                <exclude reference="078-6d-nG4"/>
-                                <exclude reference="aLQ-la-5e6"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -69,13 +70,13 @@
                                 <include reference="rwA-q8-u3f"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="078-6d-nG4"/>
+                                <include reference="aLQ-la-5e6"/>
                                 <include reference="B1h-91-9Lg"/>
                                 <include reference="CDj-MA-vuG"/>
                                 <include reference="SZj-l1-dwc"/>
                                 <include reference="gEq-ic-K3l"/>
                                 <include reference="yVW-Df-XBZ"/>
-                                <include reference="078-6d-nG4"/>
-                                <include reference="aLQ-la-5e6"/>
                             </mask>
                         </variation>
                     </view>
