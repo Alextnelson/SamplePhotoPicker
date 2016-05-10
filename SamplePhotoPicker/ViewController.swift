@@ -8,18 +8,45 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    let cameraRollPicker = UIImagePickerController()
+    let cameraPicker = UIImagePickerController()
+    
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var imageFromCamera: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        cameraRollPicker.delegate = self
+        cameraPicker.delegate = self
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    @IBAction func pickImageFromCameraRoll(sender: AnyObject) {
+        self.presentViewController(cameraRollPicker, animated: true, completion: nil)
     }
 
+    @IBAction func takePhoto(sender: AnyObject) {
+        presentViewController(cameraPicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageFromCamera.contentMode = .ScaleAspectFit
+            imageFromCamera.image = pickedImage
+        }
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
 }
 
